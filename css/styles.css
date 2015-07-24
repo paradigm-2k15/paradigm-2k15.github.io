@@ -1,0 +1,156 @@
+body{
+  font-size: 16px;
+}
+@font-face {
+    font-family: 'Exo2.0-Bold';
+    src: url('../fonts/exo_2.0/Exo2.0-Bold.otf');
+}
+@font-face {
+    font-family: 'Exo2.0-Thin';
+    src: url('../fonts/exo_2.0/Exo2.0-Thin.otf');
+}
+@font-face {
+    font-family: 'Exo2.0-Regular';
+    src: url('../fonts/exo_2.0/Exo2.0-Regular.otf');
+}
+.event-content{
+  height: 100vh;
+  width:100%;
+  background: #222;
+}
+.whole-event{
+  overflow: hidden;
+  height: 100%;
+  width:100%;
+}
+.event{
+  height:100%;
+  width: 100%;
+  display:none;
+  /*overflow: hidden;*/
+}
+.event-image{
+  width: 40%;
+  float: left;
+  height:100%;
+  background:#fff url("../img/jacksparrow.png") no-repeat;
+  background-size: cover;
+}
+.info{
+  height: 100%;
+  font-family: 'Exo2.0-Regular',sans-serif;
+  color:#FFF;
+  text-align: center;
+  width:60%;
+  background: #cd2929;
+  float:left;
+}
+.info-close{
+  width:3em;
+  height:3em;
+  position: relative;
+  float: right;
+  right: 1%;
+  top:1%;
+}
+.desc{
+  font-family: 'Exo2.0-Regular',sans-serif;
+  width:100%;
+  height:70%;
+  padding: 0.7em;
+  padding-top: 2em;
+  box-sizing: border-box;
+}
+.event_title{
+  font-family: 'Exo2.0-Bold',sans-serif;
+  width:100%;
+  padding-left: 3%;
+  box-sizing: border-box;
+  font-variant: small-caps;
+  font-size: 4em;
+}
+.button{
+  width:100%;
+  font-family: 'Exo2.0-Bold',sans-serif;
+}
+.instruction{
+  width:100%;
+  left: 25%;
+  height:100%;
+  box-sizing: border-box;
+  padding-top: 4.5em;
+}
+.ins{
+  text-decoration: none;
+  color:inherit;
+  font-family: 'Exo2.0-Thin',sans-serif;
+  font-size: 1.8em;
+  background: #cd2929;
+  padding: 0.3em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+  box-shadow: .1em .1em .2em #333;
+  border-radius: .15em;
+}
+.contact{
+  font-family: 'Exo2.0-Regular',sans-serif;
+  font-size: 15px;
+  height:30%;
+  width:100%;
+  padding: 0.7em;
+  box-sizing: border-box;
+}
+.head_info{
+  height:60%;
+  width:100%;
+}
+.head{
+  width: 50%;
+  float: left;
+  height:80%;
+  text-align: center;
+}
+.head-name{
+  font-size: 2.5em;
+  font-family: 'Exo2.0-Thin',sans-serif;
+  font-variant: small-caps;
+  text-align: center;
+}
+.ph{
+  font-family: 'Exo2.0-Bold',sans-serif;
+  font-size: 15px;
+}
+.instruct{
+  width:100%;
+  height:100%;
+  float: left;
+  /*opacity:0.8;*/
+  /*background: black;*/
+  background:#Fff;
+}
+.ins-close{
+  position: relative;
+  top:1em;
+  left: 1em;
+  float: left;
+  width: 2.5em;
+  height: 2.5em;
+}
+.leftarrow{
+  float:left;
+  position: relative;
+  bottom: 55%;
+  left: 3%;
+  height:0%;
+}
+.rightarrow{
+  float: right;
+  position: relative;
+  bottom: 55%;
+  right: 3%;
+  height:0%;
+}
+
+.event-active{
+  display: block;
+}
