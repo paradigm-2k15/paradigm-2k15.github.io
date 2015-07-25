@@ -24,15 +24,17 @@ html {
  * Customize the background color to match your design.
  */
 
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
+ ::-moz-selection {
+     background: #cd2929;
+     color: #fff;
+     text-shadow: none;
+ }
 
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
+ ::selection {
+     background: #cd2929;
+     color: #fff;
+     text-shadow: none;
+ }
 
 /*
  * A better looking default horizontal rule

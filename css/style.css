@@ -1,0 +1,193 @@
+
+/*
+
+#cd2929 red
+#f5f5f5 white
+#212121 black
+
+*/
+
+@font-face {
+  font-family: 'Exo2.0-Bold';
+  src: url('../fonts/exo_2.0/Exo2.0-Bold.otf');
+}
+
+@font-face {
+  font-family: 'Exo2.0-Thin';
+  src: url('../fonts/exo_2.0/Exo2.0-Thin.otf');
+}
+
+@font-face {
+  font-family: 'Exo2.0-Light';
+  src: url('../fonts/exo_2.0/Exo2.0-Light.otf');
+}
+@font-face {
+  font-family: 'Exo2.0-Regular';
+  src: url('../fonts/exo_2.0/Exo2.0-Regular.otf');
+}
+
+
+body{
+    font-family: 'Exo2.0-Regular',sans-serif;
+    background-color: #f5f5f5;
+}
+
+.wrap960{width: 90%; margin: 0 auto;}
+.top-bar{
+  float: left;
+  position: fixed;
+  width: 100%;
+  height: 75px;
+  z-index: 10;
+  /*background : url("../img/nav-bg.png") repeat-x;*/
+}
+
+
+.logo-box{
+  float: left;
+  position: relative;
+  left: 7%;
+  width: 150px;
+  height: 75px;
+  /*background-color: #000;*/
+  /*background-image: url("../img/nav-bg.png");*/
+  /*background-position: 0px 0px;*/
+  /*background-size: 200px 100px;*/
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.logo{
+  transition: background 0.3s ease-out;
+  background: url("../img/para_logo_ph.png") no-repeat;
+}
+.logo-box p{
+  margin: 0;
+  height: 75px;
+}
+.logo > a{
+  text-indent: -9999px;
+}
+.nav-box{
+  height: 75px;
+  width: 600px;
+  /*background: #00f;*/
+  float: right;
+}
+
+.nav {
+  list-style-type: none;
+  text-align: center;
+}
+.nav li{
+  display: inline-block;
+  position: relative;
+}
+.nav  a{
+  font-family: 'Exo2.0-Light',sans-serif;
+  text-transform: uppercase;
+  position: relative;
+  top: 10px;
+  text-decoration: none;
+  color: #f5f5f5;
+  padding: 29px 10px;
+  background : url("../img/nav-bg.png") no-repeat;
+  background-position: 300px 0px;
+  transition: background 0.3s linear,color 0.3s linear;
+}
+
+.nav a:hover, .nav-active{
+  background : url("../img/nav-bg.png") no-repeat;
+  background-position: center bottom !important;
+  color: #fff !important;
+  /*transition: background 0.3s ease-in;*/
+}
+
+.top-bar-black {
+  background-color: #333;
+}
+
+.top-bar-black a{
+  color: #a4a4a4;
+}
+.top-bar-black a:hover{
+  color: #fff !important;
+}
+
+.top-bar-black .logo{
+  transition: background 0.3s ease-in;
+  background: url("../img/para_logo_ph.png") no-repeat;
+  background-position: right;
+}
+
+.home-slide{
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  background: url("../img/slide-bg.jpg") no-repeat fixed;
+  background-size: cover;
+}
+
+.overlay-pattern{
+  background: url("../img/black-pattern.png");
+  width: 100%;
+  height: 100%;
+}
+
+
+.para-slide{
+  font-size: 1em;
+  margin: 0 auto;
+  font-weight: normal;
+  line-height: 80px;
+  position: relative;
+  top: 30%;
+  width: 850px;
+ }
+.pre-para , .para-slide, .post-para{
+  text-transform: uppercase;
+}
+
+.pre-para{
+  height: 80px;
+  color: #f5f5f5;
+  font-size: 4em;
+  font-family: 'Exo2.0-Thin',sans-serif;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.para{
+  font-family: 'Exo2.0-Bold',sans-serif;
+  font-size: 10em;
+  color: #cd2929;
+  height: 0px;
+  width: 50%;
+  text-align: right;
+  box-sizing: border-box;
+}
+
+.digm{
+  float: right;
+  height: 0px;
+  width: 50%;
+  box-sizing: border-box;
+  font-size: 10em;
+  color: #f5f5f5;
+  font-family: 'Exo2.0-Thin',sans-serif;
+}
+
+.post-para{
+  text-align: right;
+  line-height: 10px;
+  color: #cd2929;
+  font-size: 3em;
+  font-family: 'Exo2.0-Bold',sans-serif;
+  display: none;
+  padding-right: 55px;
+}
+
+.about-container{
+  height: 1000px;
+  background: url("../img/bg_dots_black.png") ;
+}
