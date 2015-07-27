@@ -67,4 +67,46 @@ $(document).ready(function() {
   });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+$('.event_column').on("mouseenter",function(){
+  $(this).children('.eventhover').addClass("event-hover-active");
+});
+
+$('.event_column').on("mouseleave",function(){
+  $(this).children('.eventhover').removeClass("event-hover-active");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
