@@ -2,6 +2,7 @@ var main = function(){
 
 var winHeight= $(window).height();
 $(".home-slide").css("height",winHeight);
+$(".event-content").css("height",winHeight-75);
 
 //para-shuffler code begins
 var $post_para = $(".post-para"),
@@ -36,11 +37,22 @@ var $post_para = $(".post-para"),
   });
 //  smooth scroller ends
 
+
+// NOTE: top bar scroller starts
 var scroll_changes = function(){
   var winScroll = $(this).scrollTop(),
       topBar= $(".top-bar"),
       homeHeight = $(".home-slide").height(),
-      activeNav = $(".nav-active");
+      activeNav = $(".nav-active"),
+      aboutHeight = $(".about-container").height(),
+      teamHeight = $(".team-container").height(),
+      eventGridHeight = $(".event-container").height(),
+      eventContentHeight = $(".event-content").height(),
+      totalEventScrollHeight = homeHeight+aboutHeight+100+teamHeight+eventGridHeight+100-75;
+
+if($(".event-content").css("display") == "block") totalEventScrollHeight += eventContentHeight;
+
+// console.log($(".event-content"));
 
   if((homeHeight-75) <= winScroll){
       topBar.addClass("top-bar-black");
@@ -51,11 +63,117 @@ var scroll_changes = function(){
     topBar.removeClass("top-bar-black");
     $("a[href$='About']").removeClass("nav-active");
   }
+
+  if((homeHeight+aboutHeight+100 -75) <= winScroll){  //+100 for compensating padding
+    activeNav.removeClass("nav-active");
+    $("a[href$='About']").removeClass("nav-active");
+    $("a[href$='Team']").addClass("nav-active");
+  }
+  else if((homeHeight+aboutHeight+100 -75) > winScroll){
+    $("a[href$='Team']").removeClass("nav-active");
+  }
+
+  if((homeHeight+aboutHeight+100+teamHeight-75) <= winScroll){
+    activeNav.removeClass("nav-active");
+    $("a[href$='About']").removeClass("nav-active");
+    $("a[href$='Team']").removeClass("nav-active");
+    $("a[href$='Events']").addClass("nav-active");
+  }
+  else if((homeHeight+aboutHeight+100+teamHeight-75) > winScroll){
+    $("a[href$='Events']").removeClass("nav-active");
+  }
+
+  if(totalEventScrollHeight <= winScroll ){
+    activeNav.removeClass("nav-active");
+    $("a[href$='About']").removeClass("nav-active");
+    $("a[href$='Team']").removeClass("nav-active");
+    $("a[href$='Events']").removeClass("nav-active");
+    $("a[href$='Register']").addClass("nav-active");
+  }
 }
 
 scroll_changes();
 
 $(window).scroll(scroll_changes);
+
+// NOTE: top bar scroller ends
+
+
+// NOTE: event details slider begins
+
+$('.instruct').hide();
+
+$('.ins').click(function(){
+   $('.instruct').show();
+   $('.ins').attr("disabled","disabled");
+   // $('.ins').css('box-shadow','-.1em -.1em -.2em .4em  #111');
+
+});
+
+$('.ins-close').click(function(){
+ $('.instruct').hide();
+ $('.ins').removeAttr("disabled");
+ // $('.ins').css('box-shadow','-.1em -.1em -.2em .4em  #111');
+});
+
+function reset(){
+  $('.instruct').hide();
+  $('.ins').removeAttr("disabled");
+}
+
+
+$('.leftarrow').click(function (){
+ var currSlide=$(".event-active");
+ var prevSlide = currSlide.prev();
+ // console.log(nextSlide);
+ if(prevSlide.length == 0){
+   prevSlide = $(".event").last();
+ }
+ currSlide.fadeOut(400).removeClass("event-active");
+ reset();
+ prevSlide.fadeIn(400).addClass("event-active");
+
+});
+
+$('.rightarrow').click(function (){
+ var currSlide=$(".event-active");
+ var nextSlide = currSlide.next();
+ // console.log(nextSlide);
+ if(nextSlide.length == 0){
+   nextSlide = $(".event").first();
+ }
+ currSlide.fadeOut(400).removeClass("event-active");
+ reset();
+ nextSlide.fadeIn(400).addClass("event-active");
+});
+
+$('.info-close').click(function (){
+ $('.event-content').hide();
+});
+
+// NOTE: event detials slider ends
+
+// NOTE: event hover code begins
+
+$('.event_column').on("mouseenter",function(){
+  $(this).children('.eventhover').addClass("event-hover-active");
+});
+
+$('.event_column').on("mouseleave",function(){
+  $(this).children('.eventhover').removeClass("event-hover-active");
+});
+
+$(".event_column").click(function(){
+  var classArray =$(this).attr('class').split("-");
+  $(".event-active").removeClass("event-active");
+  $(".event-"+classArray[2]).addClass('event-active');
+  $(".event-content").show();
+  $('html,body').animate({
+    scrollTop: $(".home-slide").height() + $(".about-container").height() + $(".team-container").height() + $(".event-container").height() + 200 - 75
+  }, 600);
+});
+// NOTE: event hover code ends
+
 
 
 }

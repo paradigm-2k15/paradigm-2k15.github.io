@@ -8,6 +8,11 @@
 */
 
 @font-face {
+  font-family: 'Exo2.0-Black';
+  src: url('../fonts/exo_2.0/Exo2.0-Black.otf');
+}
+
+@font-face {
   font-family: 'Exo2.0-Bold';
   src: url('../fonts/exo_2.0/Exo2.0-Bold.otf');
 }
@@ -30,6 +35,20 @@
 body{
     font-family: 'Exo2.0-Regular',sans-serif;
     background-color: #f5f5f5;
+}
+
+body::-webkit-scrollbar {
+    width: 7px;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #bc2525;
+  border-radius: 4px;
+  /*outline: 1px solid #333;*/
 }
 
 .wrap960{width: 90%; margin: 0 auto;}
@@ -97,10 +116,10 @@ body{
 }
 
 .nav a:hover, .nav-active{
-  background : url("../img/nav-bg.png") no-repeat;
+  /*background : url("../img/nav-bg.png") no-repeat;*/
   background-position: center bottom !important;
   color: #fff !important;
-  /*transition: background 0.3s ease-in;*/
+  transition: background 0.3s linear,color 0.3s linear;
 }
 
 .top-bar-black {
@@ -187,7 +206,400 @@ body{
   padding-right: 55px;
 }
 
-.about-container{
-  height: 1000px;
-  background: url("../img/bg_dots_black.png") ;
+/* NOTE: about section css begins*/
+  .about-container{
+    height: auto;
+    background:  url("../img/bg_dots_black.png") ;
+    padding: 50px 0;
+  }
+
+
+  .section-title {
+    text-shadow: rgba(0,0,0,.01) 0 0 1px;
+    font-family: 'Exo2.0-Black',sans-serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #212121;
+  }
+  .section-title p{font-size: 0.5em; margin: 0; line-height: 3px;}
+
+  .about-para{width: 80%; margin: 0 auto; padding: 40px 0; text-align: center; font-family: "Exo2.0-Regular",sans-serif;}
+  .about-para span{color: #cd2929; font-weight: bold;}
+
+  .main-logo-container{width: 100%; height: 300px;}
+  .main-logo{width: 250px; margin: 0 auto;}
+  .para-detail-container{width: 100%; height: 100px; text-align: center; text-transform: uppercase; font-family: "Exo2.0-Bold",sans-serif;}
+  .num-event{width: 33.3333333333%; box-sizing: border-box; float: left;}
+  .event-date{width: 33.3333333333%; box-sizing: border-box; float: left;}
+  .cash-prize{width: 33.3333333333%; box-sizing: border-box; float: right;}
+  .num-event span, .cash-prize span, .event-date span{color: #cd2929; font-size: 3em;}
+
+  .team-container, .register-container{ width: 100%; height: 300px; background: url("../img/slide-bg.jpg") no-repeat fixed; background-size: cover;}
+  .black-overlay{ width: 100%; height: 100%; background: url("../img/black-pattern.png");}
+  .member-detail{  font-family: "Exo2.0-Black",sans-serif; color: #a4a4a4; padding: 25px 0;}
+  .member-name{font-size: 1.2em; color: #a4a4a4; text-transform: uppercase;}
+  .member-post{color: #cd2929; text-transform: uppercase; font-size: 0.8em;}
+  .container{text-align: center;}
+
+
+  .register-info{width: 80%; text-align: center; font-size: 1em; color: #a4a4a4; text-transform: uppercase; margin: 0 auto; padding: 30px 0;}
+  .reg-button{text-decoration: none; padding: 10px; background: #cd2929; color: #f5f5f5; font-size: 1.2em; font-family: "Exo2.0-Light",sans-serif;}
+  .reg-button:hover{background: #de3030;}
+/* NOTE: about section css ends */
+
+/* NOTE: event details css start */
+.event-content{
+  display: none;
+  min-height: 500px;
+  height: 100vh;
+  width:100%;
+  background: #222;
 }
+.whole-event{
+  overflow: hidden;
+  height: 100%;
+  width:100%;
+}
+.event{
+  height:100%;
+  width: 100%;
+  display:none;
+  /*overflow: hidden;*/
+}
+
+
+.event-1 > .event-image{background:#fff url("../img/eddard.png") no-repeat;}
+.event-2 > .event-image{background:#fff url("../img/web.png") no-repeat;}
+.event-3 > .event-image{background:#fff url("../img/itachi.png") no-repeat;}
+.event-4 > .event-image{background:#fff url("../img/nine.png") no-repeat;}
+.event-5 > .event-image{background:#fff url("../img/3drago.png") no-repeat;}
+.event-6 > .event-image{background:#fff url("../img/zorro.png") no-repeat;}
+.event-7 > .event-image{background:#fff url("../img/botno.png") no-repeat;}
+.event-8 > .event-image{background:#fff url("../img/jacksparrow.png") no-repeat;}
+.event-9 > .event-image{background:#fff url("../img/nine.png") no-repeat;}
+.event-10 > .event-image{background:#fff url("../img/zorro.png") no-repeat;}
+.event-11 > .event-image{background:#fff url("../img/jacksparrow.png") no-repeat;}
+.event-12 > .event-image{background:#fff url("../img/golem.png") no-repeat;}
+.event-13 > .event-image{background:#fff url("../img/botno.png") no-repeat;}
+.event-14 > .event-image{background:#fff url("../img/eddard.png") no-repeat;}
+.event-15 > .event-image{background:#fff url("../img/jacksparrow.png") no-repeat;}
+.event-16 > .event-image{background:#fff url("../img/zorro.png") no-repeat;}
+
+.event-image{
+  width: 40%;
+  float: left;
+  height:100%;
+  background-size: cover !important;
+}
+
+.info{
+  height: 100%;
+  font-family: 'Exo2.0-Regular',sans-serif;
+  color:#FFF;
+  text-align: center;
+  width:60%;
+  background: #cd2929;
+  float:left;
+}
+
+.info-close{
+  width:2em;
+  height:2em;
+  position: relative;
+  float: right;
+  right: 1%;
+  top:1%;
+  cursor: pointer;
+}
+.desc{
+  font-family: 'Exo2.0-Regular',sans-serif;
+  width:100%;
+  height:70%;
+  padding: 0.7em;
+  padding-top: 2em;
+  box-sizing: border-box;
+}
+.event_title{
+  font-family: 'Exo2.0-Bold',sans-serif;
+  width:100%;
+  padding-left: 3%;
+  box-sizing: border-box;
+  font-variant: small-caps;
+  font-size: 3em;
+  line-height: 57px;
+}
+.button{
+  width:100%;
+  font-family: 'Exo2.0-Bold',sans-serif;
+}
+.instruction{
+  width:100%;
+  left: 25%;
+  height:100%;
+  box-sizing: border-box;
+  padding-top: 35px;
+}
+.ins{
+  text-decoration: none;
+  color:inherit;
+  font-family: 'Exo2.0-Thin',sans-serif;
+  font-size: 1.8em;
+  background: #cd2929;
+  padding: 0.3em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+  box-shadow: .1em .1em .2em #333;
+  border-radius: .15em;
+}
+.contact{
+  font-family: 'Exo2.0-Regular',sans-serif;
+  font-size: 15px;
+  height:30%;
+  width:100%;
+  padding: 0.7em;
+  box-sizing: border-box;
+}
+.head_info{
+  height:60%;
+  width:100%;
+}
+.head{
+  width: 50%;
+  float: left;
+  height:80%;
+  text-align: center;
+}
+.head-name{
+  font-size: 2.5em;
+  line-height: 37px;
+  font-family: 'Exo2.0-Thin',sans-serif;
+  font-variant: small-caps;
+  text-align: center;
+}
+.ph{
+  font-family: 'Exo2.0-Bold',sans-serif;
+  font-size: 15px;
+}
+.instruct{
+  width:100%;
+  height:100%;
+  float: left;
+  /*opacity:0.8;*/
+  /*background: black;*/
+  background:#Fff;
+}
+.ins-close{
+  position: relative;
+  top:1em;
+  left: 1em;
+  float: left;
+  width: 2.5em;
+  height: 2.5em;
+  cursor: pointer;
+}
+.leftarrow{
+  float:left;
+  position: relative;
+  bottom: 55%;
+  left: 3%;
+  height:0%;
+}
+.rightarrow{
+  float: right;
+  position: relative;
+  bottom: 55%;
+  right: 3%;
+  height:0%;
+}
+
+.event-active{
+  display: block;
+}
+
+/* NOTE: event details css end */
+
+
+
+.map-line{width: 100%; height: 5px; background: #cd2929;}
+.ssn-map{width: 100%; height: 400px;}
+.ssn-map iframe{width: 100%; height: 390px;}
+
+
+footer{background: #333;}
+.foot{
+  color: #a4a4a4;
+  padding-top: 20px;
+  text-align: center;
+  font-family: 'Exo2.0-Regular',sans-serif;
+  padding-bottom: 20px;
+}
+
+.foot a{
+  text-decoration: none;
+  color: #cd2929;
+}
+
+.foot a:hover{
+  color: #ab2323;
+}
+
+
+/* NOTE: EVENT GRID CSS BEGINS */
+.event-container{padding: 50px 0; background: url("../img/bg_dots_black.png");}
+.event_column{
+  height:200px;
+  cursor: pointer;
+  /*border: 1px solid black;*/
+}
+
+.eventhover{
+  display:none;
+  width: 100%; height: 200px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Exo2.0-Bold',sans-serif;
+  font-size: 1.3em;
+  color: #cd2929;
+  text-shadow: 1px 0px #111;
+}
+.eventhover div{width: 100%; height: 100px; padding-top: 35%;}
+.event-hover-active{
+  display: block;
+  background: url("../img/black-pattern.png");
+  height:200px;
+  position:relative;
+  bottom:200px;
+}
+
+
+
+/*
+* Skeleton V2.0.4
+* Copyright 2014, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 12/29/2014
+*/
+
+
+
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box; }
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box; }
+
+.row{
+  padding: 20px 0;
+}
+/* For devices larger than 400px */
+@media (min-width: 400px) {
+  .container {
+    width: 85%;
+    padding: 0; }
+}
+
+/* For devices larger than 550px */
+@media (min-width: 550px) {
+  .container {
+    width: 80%; }
+  .column,
+  .columns {
+    margin-left: 4%; }
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0; }
+
+  .one.column,
+  .one.columns                    { width: 4.66666666667%; }
+  .two.columns                    { width: 13.3333333333%; }
+  .three.columns                  { width: 22%;            }
+  .four.columns                   { width: 30.6666666667%; }
+  .five.columns                   { width: 39.3333333333%; }
+  .six.columns                    { width: 48%;            }
+  .seven.columns                  { width: 56.6666666667%; }
+  .eight.columns                  { width: 65.3333333333%; }
+  .nine.columns                   { width: 74.0%;          }
+  .ten.columns                    { width: 82.6666666667%; }
+  .eleven.columns                 { width: 91.3333333333%; }
+  .twelve.columns                 { width: 100%; margin-left: 0; }
+
+  .one-third.column               { width: 30.6666666667%; }
+  .two-thirds.column              { width: 65.3333333333%; }
+
+  .one-half.column                { width: 48%; }
+
+  /* Offsets */
+  .offset-by-one.column,
+  .offset-by-one.columns          { margin-left: 8.66666666667%; }
+  .offset-by-two.column,
+  .offset-by-two.columns          { margin-left: 17.3333333333%; }
+  .offset-by-three.column,
+  .offset-by-three.columns        { margin-left: 26%;            }
+  .offset-by-four.column,
+  .offset-by-four.columns         { margin-left: 34.6666666667%; }
+  .offset-by-five.column,
+  .offset-by-five.columns         { margin-left: 43.3333333333%; }
+  .offset-by-six.column,
+  .offset-by-six.columns          { margin-left: 52%;            }
+  .offset-by-seven.column,
+  .offset-by-seven.columns        { margin-left: 60.6666666667%; }
+  .offset-by-eight.column,
+  .offset-by-eight.columns        { margin-left: 69.3333333333%; }
+  .offset-by-nine.column,
+  .offset-by-nine.columns         { margin-left: 78.0%;          }
+  .offset-by-ten.column,
+  .offset-by-ten.columns          { margin-left: 86.6666666667%; }
+  .offset-by-eleven.column,
+  .offset-by-eleven.columns       { margin-left: 95.3333333333%; }
+
+  .offset-by-one-third.column,
+  .offset-by-one-third.columns    { margin-left: 34.6666666667%; }
+  .offset-by-two-thirds.column,
+  .offset-by-two-thirds.columns   { margin-left: 69.3333333333%; }
+
+  .offset-by-one-half.column,
+  .offset-by-one-half.columns     { margin-left: 52%; }
+
+}
+
+
+/* Self Clearing Goodness */
+.container:after,
+.row:after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both; }
+
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
