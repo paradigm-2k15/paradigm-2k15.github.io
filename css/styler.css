@@ -1,8 +1,17 @@
 
+@font-face {
+    font-family: 'Exo2.0-Black';
+    src: url('../fonts/exo_2.0/Exo2.0-Black.otf');
+}
+
+@font-face {
+    font-family: 'Exo2.0-Light';
+    src: url('../fonts/exo_2.0/Exo2.0-Light.otf');
+}
 .hide{
   /*height: 100vh;*/
   width:100%;
-  font-family: 'Exo2.0-Black',sans-serif;
+  font-family: 'Exo2.0-Light',sans-serif;
   background: url('../img/bg_dots_black.png');
   /*text-align: center;*/
 }
@@ -57,11 +66,16 @@
   padding: 0.1em;
   font-size: 1em;
 }
+input:focus{
+  border: 1px solid #cd2929;
+  box-shadow: 0px 0px 5px #cd2929;
+  outline: 0;
+}
 .dept input{
   width: 80%;
 }
 .reg-title{
-  font-family: 'Exo2.0-Bold',sans-serif;
+  font-family: 'Exo2.0-Black',sans-serif;
   text-align: center;
   font-size: 1.5em;
 }
