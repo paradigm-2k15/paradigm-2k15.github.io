@@ -1,13 +1,13 @@
 $(document).ready(function() {
    $('.instruct').hide();
 
-  $('.ins').click(function inst(){
+  $('.ins').click(function(){
       $('.instruct').show();
       $('.ins').attr("disabled","disabled");
       // $('.ins').css('box-shadow','-.1em -.1em -.2em .4em  #111');
 
   });
-  $('.ins-close').click(function reset(){
+  $('.ins-close').click(function(){
     $('.instruct').hide();
     $('.ins').removeAttr("disabled");
     // $('.ins').css('box-shadow','-.1em -.1em -.2em .4em  #111');
@@ -29,40 +29,40 @@ $(document).ready(function() {
   }
 
   $('.leftarrow').click(function (){
-    // index-=1;
-    // if(index<0){
-    //   index=items.length - 1 ;}
-    // cycle();
-    // reset();
-    var currSlide=$(".event-active");
-    var prevSlide = currSlide.prev();
-    // console.log(nextSlide);
-    if(prevSlide.length == 0){
-      prevSlide = $(".event").last();
-    }
-    currSlide.fadeOut(400).removeClass("event-active");
+    index-=1;
+    if(index<0){
+      index=items.length - 1 ;}
+    cycle();
     reset();
-    prevSlide.fadeIn(400).addClass("event-active");
+    // var currSlide=$(".event-active");
+    // var prevSlide = currSlide.prev();
+    // // console.log(nextSlide);
+    // if(prevSlide.length == 0){
+    //   prevSlide = $(".event").last();
+    // }
+    // currSlide.fadeOut(400).removeClass("event-active");
+    // reset();
+    // prevSlide.fadeIn(400).addClass("event-active");
 
   });
 
   $('.rightarrow').click(function (){
-    // index+=1;
-    // index%=items.length;
-    // cycle();
-    // reset();
-    var currSlide=$(".event-active");
-    var nextSlide = currSlide.next();
-    // console.log(nextSlide);
-    if(nextSlide.length == 0){
-      nextSlide = $(".event").first();
-    }
-    currSlide.fadeOut(400).removeClass("event-active");
+    index+=1;
+    index%=items.length;
+    cycle();
     reset();
-    nextSlide.fadeIn(400).addClass("event-active");
+    // var currSlide=$(".event-active");
+    // var nextSlide = currSlide.next();
+    // // console.log(nextSlide);
+    // if(nextSlide.length == 0){
+    //   nextSlide = $(".event").first();
+    // }
+    // currSlide.fadeOut(400).removeClass("event-active");
+    // reset();
+    // nextSlide.fadeIn(400).addClass("event-active");
   });
 
-  $('.info-close').click(function closeevent(){
+  $('.info-close').click(function(){
     $('.event-content').hide();
   });
 

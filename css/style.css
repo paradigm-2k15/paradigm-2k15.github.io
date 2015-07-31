@@ -9,26 +9,26 @@
 
 @font-face {
   font-family: 'Exo2.0-Black';
-  src: url('../fonts/exo_2.0/Exo2.0-Black.otf');
+  src: url('../fonts/exo_2.0/Exo2.0-Black.eot'), url('../fonts/exo_2.0/Exo2.0-Black.otf');
 }
 
 @font-face {
   font-family: 'Exo2.0-Bold';
-  src: url('../fonts/exo_2.0/Exo2.0-Bold.otf');
+  src: url('../fonts/exo_2.0/Exo2.0-Bold.eot'), url('../fonts/exo_2.0/Exo2.0-Bold.otf');
 }
 
 @font-face {
   font-family: 'Exo2.0-Thin';
-  src: url('../fonts/exo_2.0/Exo2.0-Thin.otf');
+  src: url('../fonts/exo_2.0/Exo2.0-Thin.eot'), url('../fonts/exo_2.0/Exo2.0-Thin.otf');
 }
 
 @font-face {
   font-family: 'Exo2.0-Light';
-  src: url('../fonts/exo_2.0/Exo2.0-Light.otf');
+  src: url('../fonts/exo_2.0/Exo2.0-Light.eot'), url('../fonts/exo_2.0/Exo2.0-Light.otf');
 }
 @font-face {
   font-family: 'Exo2.0-Regular';
-  src: url('../fonts/exo_2.0/Exo2.0-Regular.otf');
+  src: url('../fonts/exo_2.0/Exo2.0-Regular.eot'), url('../fonts/exo_2.0/Exo2.0-Regular.otf');
 }
 
 
@@ -412,7 +412,9 @@ body::-webkit-scrollbar-thumb {
   right: 3%;
   height:0%;
 }
-
+.event-inactive{
+  display:none;
+}
 .event-active{
   display: block;
 }
