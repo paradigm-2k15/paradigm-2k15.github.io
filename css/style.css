@@ -522,7 +522,7 @@ footer{background: #333;}
   padding: 20px 0;
 }
 /* For devices larger than 400px */
-@media (min-width: 400px) {
+@media (min-width: 320px) {
   .container {
     width: 85%;
     padding: 0; }
