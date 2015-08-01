@@ -457,7 +457,7 @@ footer{background: #333;}
 /* NOTE: EVENT GRID CSS BEGINS */
 .event-container{padding: 50px 0; background: url("../img/bg_dots_black.png");}
 .event_column{
-  /*height:200px;*/
+  height:200px;
   cursor: pointer;
   /*border: 1px solid black;*/
 }
