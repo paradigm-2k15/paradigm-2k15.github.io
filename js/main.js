@@ -107,6 +107,7 @@ $(window).scroll(scroll_changes);
 $('.instruct').hide();
 
 $('.ins').click(function(){
+   $('.event-image').hide();
    $('.instruct').show();
    $('.ins').attr("disabled","disabled");
    // $('.ins').css('box-shadow','-.1em -.1em -.2em .4em  #111');
@@ -115,31 +116,38 @@ $('.ins').click(function(){
 
 $('.ins-close').click(function(){
   $('.instruct').hide();
+  $('.event-image').show();
   $('.ins').removeAttr("disabled");
  // $('.ins').css('box-shadow','-.1em -.1em -.2em .4em  #111');
 });
 
 function reset(){
+  $('.event-image').show();
   $('.instruct').hide();
   $('.ins').removeAttr("disabled");
 }
 
-index=0;
+// index=0;
 items=$('.event');
 // item=$('.event').eq(index);
 
-function cycle() {
-  item=$('.event').eq(index);
-  items.hide(400);
-  item.show(600);
-}
+// function cycle() {
+//   item=$('.event').eq(index);
+//   items.hide(400);
+//   item.show(600);
+// }
 
 $('.leftarrow').click(function (){
   $(".event-active").addClass("event-inactive").removeClass("event-active");
-  index-=1;
-  if(index<0){
-    index=items.length - 1 ;}
-  cycle();
+  classArray[2]--;
+  if (classArray[2]<=0) {
+    classArray[2]=items.length;
+  }
+  $(".event-"+classArray[2]).addClass('event-active').show();
+  // index-=1;
+  // if(index<0){
+  //   index=items.length - 1 ;}
+  // cycle();
   reset();
   // var currSlide=$(".event-active");
   // var prevSlide = currSlide.prev();
@@ -154,10 +162,16 @@ $('.leftarrow').click(function (){
 });
 
 $('.rightarrow').click(function (){
-  $(".event-active").addClass("event-inactive").removeClass("event-active");
-  index+=1;
-  index%=items.length;
-  cycle();
+  $(".event-active").addClass("event-inactive").removeClass("event-active").hide();
+  classArray[2]++;
+  classArray[2] %= items.length+1;
+  if (classArray[2]==0) {
+    classArray[2]=1;
+  }
+  $(".event-"+classArray[2]).addClass('event-active').show();
+  // index+=1;
+  // index%=items.length;
+  // cycle();
   reset();
   // var currSlide=$(".event-active");
   // var nextSlide = currSlide.next();
@@ -218,7 +232,7 @@ $('.event_column').on("mouseleave",function(){
 });
 
 $(".event_column").click(function(){
-  var classArray =$(this).attr('class').split("-");
+  classArray =$(this).attr('class').split("-");
   // var classArray =$(this).e;
   $(".event-active").addClass("event-inactive").removeClass("event-active");
   $(".event-"+classArray[2]).addClass('event-active').show();

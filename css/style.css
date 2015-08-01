@@ -7,6 +7,9 @@
 
 */
 
+
+
+
 @font-face {
   font-family: 'Exo2.0-Black';
   src: url('../fonts/exo_2.0/Exo2.0-Black.eot'), url('../fonts/exo_2.0/Exo2.0-Black.otf');
@@ -235,7 +238,7 @@ body::-webkit-scrollbar-thumb {
   .cash-prize{width: 33.3333333333%; box-sizing: border-box; float: right;}
   .num-event span, .cash-prize span, .event-date span{color: #cd2929; font-size: 3em;}
 
-  .team-container, .register-container{ width: 100%; height: 300px; background: url("../img/slide-bg.jpg") no-repeat fixed; background-size: cover;}
+  .team-container, .register-container{ width: 100%; height: 360px; background: url("../img/slide-bg.jpg") no-repeat fixed; background-size: cover;}
   .black-overlay{ width: 100%; height: 100%; background: url("../img/black-pattern.png");}
   .member-detail{  font-family: "Exo2.0-Black",sans-serif; color: #a4a4a4; padding: 25px 0;}
   .member-name{font-size: 1.2em; color: #a4a4a4; text-transform: uppercase;}
@@ -248,7 +251,7 @@ body::-webkit-scrollbar-thumb {
   .reg-button:hover{background: #de3030;}
 /* NOTE: about section css ends */
 
-/* NOTE: event details css start */
+ /* NOTE: event details css start */
 .event-content{
   display: none;
   min-height: 500px;
@@ -382,13 +385,15 @@ body::-webkit-scrollbar-thumb {
   font-size: 15px;
 }
 .instruct{
-  width:100%;
+  width:40%;
   height:100%;
+  /*position: relative;*/
   float: left;
+  /*right:90%;*/
   /*opacity:0.8;*/
-  /*background: black;*/
   background:#Fff;
 }
+
 .ins-close{
   position: relative;
   top:1em;
