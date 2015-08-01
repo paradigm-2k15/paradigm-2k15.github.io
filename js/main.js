@@ -3,9 +3,11 @@ var main = function(){
 
 var backToEvents = 0;
 
+var topBarHeight=$('.top-bar').height();
+
 var winHeight= $(window).height();
 $(".home-slide").css("height",winHeight);
-$(".event-content").css("height",winHeight-75);
+$(".event-content").css("height",winHeight-topBarHeight);
 
 //para-shuffler code begins
 var $post_para = $(".post-para"),
@@ -32,7 +34,7 @@ var $post_para = $(".post-para"),
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
         $('html,body').animate({
-          scrollTop: target.offset().top - 75
+          scrollTop: target.offset().top - topBarHeight
         }, 1000);
         return false;
       }
@@ -51,38 +53,38 @@ var scroll_changes = function(){
       teamHeight = $(".team-container").height(),
       eventGridHeight = $(".event-container").height(),
       eventContentHeight = $(".event-content").height(),
-      totalEventScrollHeight = homeHeight+aboutHeight+100+teamHeight+eventGridHeight+100-75;
+      totalEventScrollHeight = homeHeight+aboutHeight+100+teamHeight+eventGridHeight+100-topBarHeight;
 
 if($(".event-content").css("display") == "block") totalEventScrollHeight += eventContentHeight;
 
 // console.log($(".event-content"));
 
-  if((homeHeight-75) <= winScroll){
+  if((homeHeight-topBarHeight) <= winScroll){
       topBar.addClass("top-bar-black");
       activeNav.removeClass("nav-active");
       $("a[href$='About']").addClass("nav-active");
   }
-  else if ((homeHeight-75) > winScroll){
+  else if ((homeHeight-topBarHeight) > winScroll){
     topBar.removeClass("top-bar-black");
     $("a[href$='About']").removeClass("nav-active");
   }
 
-  if((homeHeight+aboutHeight+100 -75) <= winScroll){  //+100 for compensating padding
+  if((homeHeight+aboutHeight+100 -topBarHeight) <= winScroll){  //+100 for compensating padding
     activeNav.removeClass("nav-active");
     $("a[href$='About']").removeClass("nav-active");
     $("a[href$='Team']").addClass("nav-active");
   }
-  else if((homeHeight+aboutHeight+100 -75) > winScroll){
+  else if((homeHeight+aboutHeight+100 -topBarHeight) > winScroll){
     $("a[href$='Team']").removeClass("nav-active");
   }
 
-  if((homeHeight+aboutHeight+100+teamHeight-75) <= winScroll){
+  if((homeHeight+aboutHeight+100+teamHeight-topBarHeight) <= winScroll){
     activeNav.removeClass("nav-active");
     $("a[href$='About']").removeClass("nav-active");
     $("a[href$='Team']").removeClass("nav-active");
     $("a[href$='Events']").addClass("nav-active");
   }
-  else if((homeHeight+aboutHeight+100+teamHeight-75) > winScroll){
+  else if((homeHeight+aboutHeight+100+teamHeight-topBarHeight) > winScroll){
     $("a[href$='Events']").removeClass("nav-active");
   }
 
@@ -223,6 +225,7 @@ $('.info-close').click(function (){
 
 // NOTE: event hover code begins
 
+
 $('.event_column').on("mouseenter",function(){
   $(this).children('.eventhover').addClass("event-hover-active");
 });
@@ -240,7 +243,7 @@ $(".event_column").click(function(){
   $(".event-content").show();
   backToEvents = $(window).scrollTop();
   $('html,body').animate({
-    scrollTop: $(".home-slide").height() + $(".about-container").height() + $(".team-container").height() + $(".event-container").height() + 200 - 75
+    scrollTop: $(".home-slide").height() + $(".about-container").height() + $(".team-container").height() + $(".event-container").height() + 200 - topBarHeight
   }, 600);
 });
 // NOTE: event hover code ends

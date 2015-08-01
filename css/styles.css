@@ -1,156 +1,43 @@
-body{
-  font-size: 16px;
-}
-@font-face {
-    font-family: 'Exo2.0-Bold';
-    src: url('../fonts/exo_2.0/Exo2.0-Bold.otf');
-}
-@font-face {
-    font-family: 'Exo2.0-Thin';
-    src: url('../fonts/exo_2.0/Exo2.0-Thin.otf');
-}
-@font-face {
-    font-family: 'Exo2.0-Regular';
-    src: url('../fonts/exo_2.0/Exo2.0-Regular.otf');
-}
-.event-content{
-  height: 100vh;
-  width:100%;
-  background: #222;
-}
-.whole-event{
-  overflow: hidden;
-  height: 100%;
-  width:100%;
-}
-.event{
-  height:100%;
-  width: 100%;
-  display:none;
-  /*overflow: hidden;*/
-}
-.event-image{
-  width: 40%;
-  float: left;
-  height:100%;
-  background:#fff url("../img/jacksparrow.png") no-repeat;
-  background-size: cover;
-}
-.info{
-  height: 100%;
-  font-family: 'Exo2.0-Regular',sans-serif;
-  color:#FFF;
-  text-align: center;
-  width:60%;
-  background: #cd2929;
-  float:left;
-}
-.info-close{
-  width:3em;
-  height:3em;
-  position: relative;
-  float: right;
-  right: 1%;
-  top:1%;
-}
-.desc{
-  font-family: 'Exo2.0-Regular',sans-serif;
-  width:100%;
-  height:70%;
-  padding: 0.7em;
-  padding-top: 2em;
-  box-sizing: border-box;
-}
-.event_title{
-  font-family: 'Exo2.0-Bold',sans-serif;
-  width:100%;
-  padding-left: 3%;
-  box-sizing: border-box;
-  font-variant: small-caps;
-  font-size: 4em;
-}
-.button{
-  width:100%;
-  font-family: 'Exo2.0-Bold',sans-serif;
-}
-.instruction{
-  width:100%;
-  left: 25%;
-  height:100%;
-  box-sizing: border-box;
-  padding-top: 4.5em;
-}
-.ins{
-  text-decoration: none;
-  color:inherit;
-  font-family: 'Exo2.0-Thin',sans-serif;
-  font-size: 1.8em;
-  background: #cd2929;
-  padding: 0.3em;
-  padding-left: 0.6em;
-  padding-right: 0.6em;
-  box-shadow: .1em .1em .2em #333;
-  border-radius: .15em;
-}
-.contact{
-  font-family: 'Exo2.0-Regular',sans-serif;
-  font-size: 15px;
-  height:30%;
-  width:100%;
-  padding: 0.7em;
-  box-sizing: border-box;
-}
-.head_info{
-  height:60%;
-  width:100%;
-}
-.head{
-  width: 50%;
-  float: left;
-  height:80%;
-  text-align: center;
-}
-.head-name{
-  font-size: 2.5em;
-  font-family: 'Exo2.0-Thin',sans-serif;
-  font-variant: small-caps;
-  text-align: center;
-}
-.ph{
-  font-family: 'Exo2.0-Bold',sans-serif;
-  font-size: 15px;
-}
-.instruct{
-  width:100%;
-  height:100%;
-  float: left;
-  /*opacity:0.8;*/
-  /*background: black;*/
-  background:#Fff;
-}
-.ins-close{
-  position: relative;
-  top:1em;
-  left: 1em;
-  float: left;
-  width: 2.5em;
-  height: 2.5em;
-}
-.leftarrow{
-  float:left;
-  position: relative;
-  bottom: 55%;
-  left: 3%;
-  height:0%;
-}
-.rightarrow{
-  float: right;
-  position: relative;
-  bottom: 55%;
-  right: 3%;
-  height:0%;
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) and (max-width:749px) {
+  .wrap960{width: 100%;} .logo-box{position: static;}
 }
 
-.event-active{
-  display: block;
+/* Larger than tablet */
+@media (min-width: 750px) and (max-width:999px) {
+html{font-size: 0.75em;}
+.top-bar{height:60px;}
+.wrap960{width: 97%;}
+.logo-box{height:60px;width: 120px;}
+.logo-box p{height:60px;}
+.nav-box{height: 60px;width:500px;}
+.nav a{top:10px;padding: 22px 10px;}
+.home-slide{min-height: 450px;}
+.para-slide{width: 650px;}
+.pre-para{padding-left: 27px;height: 62px;}
+.post-para{padding-right: 52px;line-height:220px; }
+.event_column{height:150px;}
+.event_column img{height:150px;}
+.eventhover{height:150px;}
+.event-hover-active{bottom: 150px;}
+.event-image{background-size: contain !important;}
+.head-name{font-size: 2em;}
+.register-container{height:280px;}
 }
+
+/* Larger than desktop */
+@media (min-width: 1000px) and (max-width:1199){
+  .team-container{height:420px;}
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}

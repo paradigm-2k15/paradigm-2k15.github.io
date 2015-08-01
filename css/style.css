@@ -38,6 +38,7 @@
 body{
     font-family: 'Exo2.0-Regular',sans-serif;
     background-color: #f5f5f5;
+
 }
 
 body::-webkit-scrollbar {
@@ -54,7 +55,6 @@ body::-webkit-scrollbar-thumb {
   /*outline: 1px solid #333;*/
 }
 
-.wrap960{width: 90%; margin: 0 auto;}
 .top-bar{
   float: left;
   position: fixed;
@@ -64,6 +64,7 @@ body::-webkit-scrollbar-thumb {
   /*background : url("../img/nav-bg.png") repeat-x;*/
 }
 
+.wrap960{width: 90%; margin: 0 auto;}
 
 .logo-box{
   float: left;
@@ -144,7 +145,7 @@ body::-webkit-scrollbar-thumb {
 
 .home-slide{
   width: 100%;
-  height: 100vh;
+  height: 100%;
   min-height: 600px;
   background: url("../img/slide-bg.jpg") no-repeat fixed;
   background-size: cover;
@@ -201,7 +202,7 @@ body::-webkit-scrollbar-thumb {
 
 .post-para{
   text-align: right;
-  line-height: 10px;
+  line-height: 260px;
   color: #cd2929;
   font-size: 3em;
   font-family: 'Exo2.0-Bold',sans-serif;
@@ -232,6 +233,7 @@ body::-webkit-scrollbar-thumb {
 
   .main-logo-container{width: 100%; height: 300px;}
   .main-logo{width: 250px; margin: 0 auto;}
+
   .para-detail-container{width: 100%; height: 100px; text-align: center; text-transform: uppercase; font-family: "Exo2.0-Bold",sans-serif;}
   .num-event{width: 33.3333333333%; box-sizing: border-box; float: left;}
   .event-date{width: 33.3333333333%; box-sizing: border-box; float: left;}
@@ -257,7 +259,7 @@ body::-webkit-scrollbar-thumb {
   min-height: 500px;
   height: 100vh;
   width:100%;
-  background: #222;
+  background: #fff;
 }
 .whole-event{
   overflow: hidden;
@@ -295,7 +297,25 @@ body::-webkit-scrollbar-thumb {
   height:100%;
   background-size: cover !important;
 }
+.instruct{
+  width:40%;
+  height:100%;
+  /*position: relative;*/
+  float: left;
+  /*right:90%;*/
+  /*opacity:0.8;*/
+  background:#Fff;
+}
 
+.ins-close{
+  position: relative;
+  top:1em;
+  left: 1em;
+  float: left;
+  width: 2.5em;
+  height: 2.5em;
+  cursor: pointer;
+}
 .info{
   height: 100%;
   font-family: 'Exo2.0-Regular',sans-serif;
@@ -384,25 +404,7 @@ body::-webkit-scrollbar-thumb {
   font-family: 'Exo2.0-Bold',sans-serif;
   font-size: 15px;
 }
-.instruct{
-  width:40%;
-  height:100%;
-  /*position: relative;*/
-  float: left;
-  /*right:90%;*/
-  /*opacity:0.8;*/
-  background:#Fff;
-}
 
-.ins-close{
-  position: relative;
-  top:1em;
-  left: 1em;
-  float: left;
-  width: 2.5em;
-  height: 2.5em;
-  cursor: pointer;
-}
 .leftarrow{
   float:left;
   position: relative;
@@ -455,14 +457,17 @@ footer{background: #333;}
 /* NOTE: EVENT GRID CSS BEGINS */
 .event-container{padding: 50px 0; background: url("../img/bg_dots_black.png");}
 .event_column{
-  height:200px;
+  /*height:200px;*/
   cursor: pointer;
   /*border: 1px solid black;*/
 }
-
+.event_column img{
+  height:200px;
+}
 .eventhover{
   display:none;
-  width: 100%; height: 200px;
+  width: 100%;
+  height: 200px;
   text-align: center;
   text-transform: uppercase;
   font-family: 'Exo2.0-Bold',sans-serif;
@@ -474,7 +479,7 @@ footer{background: #333;}
 .event-hover-active{
   display: block;
   background: url("../img/black-pattern.png");
-  height:200px;
+  /*height:200px;*/
   position:relative;
   bottom:200px;
 }
@@ -597,16 +602,18 @@ footer{background: #333;}
 
 
 /* Larger than mobile */
-@media (max-width: 400px) {}
+@media (min-width: 400px) {}
 
 /* Larger than phablet (also point when grid becomes active) */
-@media (max-width: 550px) {}
+@media (min-width: 550px) {}
 
 /* Larger than tablet */
-@media (max-width: 750px) {}
+@media (min-width: 750px) {
+
+}
 
 /* Larger than desktop */
-@media (max-width: 1000px) {}
+@media (min-width: 1000px) {}
 
 /* Larger than Desktop HD */
-@media (max-width: 1200px) {}
+@media (min-width: 1200px) {}
