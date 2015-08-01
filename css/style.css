@@ -97,13 +97,19 @@ body::-webkit-scrollbar-thumb {
   /*background: #00f;*/
   float: right;
 }
-
+.nav-button{
+  display: none;
+  float: right;
+  width:60px;
+  height: 50px;
+}
 .nav {
   list-style-type: none;
   text-align: center;
+  position: relative;
 }
 .nav li{
-  display: inline-block;
+  display:inline-block;
   position: relative;
 }
 .nav  a{
@@ -257,7 +263,7 @@ body::-webkit-scrollbar-thumb {
 .event-content{
   display: none;
   min-height: 500px;
-  height: 100vh;
+  /*height: 100vh;*/
   width:100%;
   background: #fff;
 }
@@ -338,7 +344,7 @@ body::-webkit-scrollbar-thumb {
 .desc{
   font-family: 'Exo2.0-Regular',sans-serif;
   width:100%;
-  height:70%;
+  height:65%;
   padding: 0.7em;
   padding-top: 2em;
   box-sizing: border-box;
@@ -520,6 +526,14 @@ footer{background: #333;}
   .container {
     width: 85%;
     padding: 0; }
+  .column,
+  .columns {
+    margin-left: 4%; }
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0; }
+  .six.columns                    { width: 48%;            }
+
 }
 
 /* For devices larger than 550px */

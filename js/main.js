@@ -1,14 +1,45 @@
 var main = function(){
 
-
+var classArray=new Array();
+classArray[2]=1;
 var backToEvents = 0;
 
 var topBarHeight=$('.top-bar').height();
 
 var winHeight= $(window).height();
+
+if ($(window).width()<550) {
+  $('.nav').hide();
+  $('.nav-button').show();
+  $('.nav li').css("display","list-item");
+  $('.nav-button').click(function(){
+    $('.nav').show();
+  });
+  $('.event-container').hide();
+  $('.row').removeClass('row');
+  $('.add').addClass('row');
+  $('.columns').removeClass('three').addClass('six')
+  $('.event-content').css('display','block');
+  $('.info-close').hide();
+  $('.event-container').removeAttr('name');
+  $('.event-content').attr('name','Events');
+  // $('.leftarrow').click(function (){
+  //   index-=1;
+  //   if(index<0){
+  //     index=items.length - 1 ;}
+  //   cycle();
+  //   reset();
+  // }
+  // $('.rightarrow').click(function (){
+  //   index+=1;
+  //   index%=items.length;
+  //   cycle();
+  //   reset();
+  // }
+}
+
 $(".home-slide").css("height",winHeight);
 $(".event-content").css("height",winHeight-topBarHeight);
-
 //para-shuffler code begins
 var $post_para = $(".post-para"),
     $digm = $(".digm"),
@@ -103,6 +134,29 @@ $(window).scroll(scroll_changes);
 
 // NOTE: top bar scroller ends
 
+// NOTE: event hover code begins
+
+
+$('.event_column').on("mouseenter",function(){
+  $(this).children('.eventhover').addClass("event-hover-active");
+});
+
+$('.event_column').on("mouseleave",function(){
+  $(this).children('.eventhover').removeClass("event-hover-active");
+});
+
+$(".event_column").click(function(){
+  classArray =$(this).attr('class').split("-");
+  $(".event-active").addClass("event-inactive").removeClass("event-active");
+  $(".event-"+classArray[2]).addClass('event-active').show();
+  $(".event-content").show();
+  backToEvents = $(window).scrollTop();
+  $('html,body').animate({
+    scrollTop: $(".home-slide").height() + $(".about-container").height() + $(".team-container").height() + $(".event-container").height() + 200 - topBarHeight
+  }, 600);
+});
+// NOTE: event hover code ends
+
 
 // NOTE: event details slider begins
 
@@ -129,15 +183,16 @@ function reset(){
   $('.ins').removeAttr("disabled");
 }
 
-// index=0;
+index=0;
 items=$('.event');
-// item=$('.event').eq(index);
+item=$('.event').eq(index);
 
-// function cycle() {
-//   item=$('.event').eq(index);
-//   items.hide(400);
-//   item.show(600);
-// }
+function cycle() {
+  item=$('.event').eq(index);
+  items.hide();
+  item.show();
+}
+
 
 $('.leftarrow').click(function (){
   $(".event-active").addClass("event-inactive").removeClass("event-active");
@@ -189,6 +244,7 @@ $('.rightarrow').click(function (){
 
 
 
+
 // $('.leftarrow').click(function (){
 //  var currSlide=$(".event-active");
 //  var prevSlide = currSlide.prev();
@@ -222,31 +278,6 @@ $('.info-close').click(function (){
 });
 
 // NOTE: event detials slider ends
-
-// NOTE: event hover code begins
-
-
-$('.event_column').on("mouseenter",function(){
-  $(this).children('.eventhover').addClass("event-hover-active");
-});
-
-$('.event_column').on("mouseleave",function(){
-  $(this).children('.eventhover').removeClass("event-hover-active");
-});
-
-$(".event_column").click(function(){
-  classArray =$(this).attr('class').split("-");
-  // var classArray =$(this).e;
-  $(".event-active").addClass("event-inactive").removeClass("event-active");
-  $(".event-"+classArray[2]).addClass('event-active').show();
-  // $(".event-"+classArray).addClass('event-active').show();
-  $(".event-content").show();
-  backToEvents = $(window).scrollTop();
-  $('html,body').animate({
-    scrollTop: $(".home-slide").height() + $(".about-container").height() + $(".team-container").height() + $(".event-container").height() + 200 - topBarHeight
-  }, 600);
-});
-// NOTE: event hover code ends
 
 
 
