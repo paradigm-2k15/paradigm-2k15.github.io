@@ -150,6 +150,7 @@ input:focus{
   html{font-size: 0.6em;}
   .h_register{width: 100%;}
   .form input{ height: 20px; }
+  .floating-logo{display: none;}
 }
 
 /* Larger than phablet (also point when grid becomes active) */
@@ -157,6 +158,7 @@ input:focus{
   html{font-size: 0.7em;}
   .h_register{width:90%;}
   .form input{ height: 25px; }
+  .floating-logo{display: none;}
 }
 
 /* Larger than tablet */
@@ -164,6 +166,7 @@ input:focus{
   html{font-size: 0.85em;}
   .h_register{width: 80%;}
   .form input{ height: 28px; }
+  .floating-logo{left: 4%;}
 }
 
 /* Larger than desktop */
