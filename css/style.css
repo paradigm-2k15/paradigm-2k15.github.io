@@ -70,19 +70,19 @@ body::-webkit-scrollbar-thumb {
   float: left;
   position: relative;
   left: 7%;
-  width: 150px;
+  width: 75px;
   height: 75px;
   /*background-color: #000;*/
   /*background-image: url("../img/nav-bg.png");*/
   /*background-position: 0px 0px;*/
-  /*background-size: 200px 100px;*/
   background-repeat: no-repeat;
   overflow: hidden;
 }
 
 .logo{
   transition: background 0.3s ease-out;
-  background: url("../img/para_logo_ph.png") no-repeat;
+  background: url("../img/plogo2k15.png") repeat-x;
+  background-size: 100% 100%;
 }
 .logo-box p{
   margin: 0;
@@ -97,10 +97,11 @@ body::-webkit-scrollbar-thumb {
   /*background: #00f;*/
   float: right;
 }
-.nav-button{
+.menu-button{
   display: none;
   float: right;
-  width:60px;
+  background: url("../img/menu-button.png") left center;
+  width:36px;
   height: 50px;
 }
 .nav {
@@ -145,15 +146,15 @@ body::-webkit-scrollbar-thumb {
 
 .top-bar-black .logo{
   transition: background 0.3s ease-in;
-  background: url("../img/para_logo_ph.png") no-repeat;
-  background-position: right;
+  /*background: url("../img/para_logo_ph.png") no-repeat;*/
+  background-position: -100%;
 }
 
 .home-slide{
   width: 100%;
   height: 100%;
   min-height: 600px;
-  background: url("../img/slide-bg.jpg") no-repeat fixed;
+  background: #333 url("../img/slide-bg.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -163,6 +164,14 @@ body::-webkit-scrollbar-thumb {
   height: 100%;
 }
 
+.scroll-down{
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  position: absolute;
+  left: 45%;
+  bottom: 10px;
+}
 
 .para-slide{
   font-size: 1em;
@@ -238,7 +247,7 @@ body::-webkit-scrollbar-thumb {
   .about-para span{color: #cd2929; font-weight: bold;}
 
   .main-logo-container{width: 100%; height: 300px;}
-  .main-logo{width: 250px; margin: 0 auto;}
+  .main-logo{width: 250px; margin: 0 auto; overflow: hidden;}
 
   .para-detail-container{width: 100%; height: 100px; text-align: center; text-transform: uppercase; font-family: "Exo2.0-Bold",sans-serif;}
   .num-event{width: 33.3333333333%; box-sizing: border-box; float: left;}
@@ -246,12 +255,12 @@ body::-webkit-scrollbar-thumb {
   .cash-prize{width: 33.3333333333%; box-sizing: border-box; float: right;}
   .num-event span, .cash-prize span, .event-date span{color: #cd2929; font-size: 3em;}
 
-  .team-container, .register-container{ width: 100%; height: 360px; background: url("../img/slide-bg.jpg") no-repeat fixed; background-size: cover;}
+  .team-container, .register-container{ width: 100%; height: auto; background: #333 url("../img/slide-bg.jpg") no-repeat center center fixed; background-size: cover;}
   .black-overlay{ width: 100%; height: 100%; background: url("../img/black-pattern.png");}
   .member-detail{  font-family: "Exo2.0-Black",sans-serif; color: #a4a4a4; padding: 25px 0;}
   .member-name{font-size: 1.2em; color: #a4a4a4; text-transform: uppercase;}
   .member-post{color: #cd2929; text-transform: uppercase; font-size: 0.8em;}
-  .container{text-align: center;}
+  .container{text-align: center; padding-bottom: 20px !important;}
 
 
   .register-info{width: 80%; text-align: center; font-size: 1em; color: #a4a4a4; text-transform: uppercase; margin: 0 auto; padding: 30px 0;}
@@ -610,24 +619,92 @@ footer{background: #333;}
   clear: both; }
 
 
+
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 
 
 /* Larger than mobile */
-@media (min-width: 400px) {}
+@media only screen and (min-width: 320px) and (max-width:549px){
+  html{font-size: 0.48em;}
+  .top-bar{height:50px;}
+  .wrap960{width:98%;}
+  .logo-box{left:0;height:50px;width:50px;}
+  .logo-box p{height:50px;}
+  .nav-box{height:auto; width:100%; background-color: #333;}
+  .nav{font-size: 16px; padding-left: 0px; margin: 0 auto; position: static;}
+  .nav a{top:0;padding: 0 0; background: none;}
+  .nav li{padding: 5px 0; border-top: 1px solid #888;}
+  .home-slide{min-height: 180px;}
+  .para-slide{width:300px;font-size: 0.8em;}
+  .pre-para{padding-left: 5px;height: 50px;}
+  .post-para{padding-right: 18px;line-height: 180px;}
+  /*.team-container{height:400px;}*/
+  .about-para{font-size: 10px;}
+  .event_column{display: none;}
+  .quotes{font-size: 10px;}
+  .event-image{width: 0%;}
+  .instruct{width:100%;}
+  .event-content{min-height: 350px; max-height:420px;}
+  .info{width:100%;}
+  .head-name{font-size: 1.3em;} .ph{font-size: 0.7em;}
+  .register-container{height:240px;}
+  .foot{font-size: 10px;}
+}
 
 /* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
+@media only screen and (min-width: 550px) and (max-width:749px) {
+  html{font-size: 0.6em;}
+  .top-bar{height:50px;}
+  .wrap960{width: 98%;}
+  .logo-box{left: 0;height: 50px;width:50px;}
+  .logo-box p{height:50px;}
+  .nav-box{height:50px; width:432px;}
+  .nav a{top:10px;padding: 16px 7px;}
+  .home-slide{min-height: 300px;}
+  .para-slide{width:480px;}
+  .pre-para{padding-left: 5px;height: 50px;}
+  .post-para{padding-right: 18px;line-height: 180px;}
+  /*.team-container{height:320px;}*/
+  .event_column{height:120px;}
+  .event_column img{height:120px;}
+  .eventhover{height:120px;}
+  .event-hover-active{bottom: 120px;}
+  .event-image{width: 0%;}
+  .instruct{width:100%;}
+  .event-content{height:400px;}
+  .info{width:100%;}
+  .head-name{font-size: 2em;}
+  .register-container{height:240px;}
+}
 
 /* Larger than tablet */
-@media (min-width: 750px) {
-
+@media only screen and (min-width: 750px) and (max-width:999px) {
+html{font-size: 0.75em;}
+.top-bar{height:60px;}
+.wrap960{width: 97%;}
+.logo-box{height:60px;width: 120px;}
+.logo-box p{height:60px;}
+.nav-box{height: 60px;width:500px;}
+.nav a{top:10px;padding: 22px 10px;}
+.home-slide{min-height: 450px;}
+.para-slide{width: 650px;}
+.pre-para{padding-left: 27px;height: 62px;}
+.post-para{padding-right: 52px;line-height:220px; }
+.event_column{height:150px;}
+.event_column img{height:150px;}
+.eventhover{height:150px;}
+.event-hover-active{bottom: 150px;}
+.event-image{background-size: contain !important;}
+.head-name{font-size: 2em;}
+.register-container{height:280px;}
 }
 
 /* Larger than desktop */
-@media (min-width: 1000px) {}
+@media (min-width: 1000px) and (max-width:1199){
+  /*.team-container{height:400px;}*/
+}
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}

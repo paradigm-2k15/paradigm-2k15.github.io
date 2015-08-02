@@ -1,3 +1,174 @@
+
+// Avoid `console` errors in browsers that lack a console.
+(function() {
+    var method;
+    var noop = function () {};
+    var methods = [
+        'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+        'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+        'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+        'timeline', 'timelineEnd', 'timeStamp', 'trace', 'warn'
+    ];
+    var length = methods.length;
+    var console = (window.console = window.console || {});
+
+    while (length--) {
+        method = methods[length];
+
+        // Only stub undefined methods.
+        if (!console[method]) {
+            console[method] = noop;
+        }
+    }
+}());
+
+// Place any jQuery/helper plugins in here.
+/**
+ * @name		Shuffle Letters
+ * @author		Martin Angelov
+ * @version 	1.0
+ * @url			http://tutorialzine.com/2011/09/shuffle-letters-effect-jquery/
+ * @license		MIT License
+ */
+
+(function($){
+
+	$.fn.shuffleLetters = function(prop){
+
+		var options = $.extend({
+			"step"		: 8,			// How many times should the letters be changed
+			"fps"		: 25,			// Frames Per Second
+			"text"		: "", 			// Use this text instead of the contents
+			"callback"	: function(){}	// Run once the animation is complete
+		},prop)
+
+		return this.each(function(){
+
+			var el = $(this),
+				str = "";
+
+
+			// Preventing parallel animations using a flag;
+
+			if(el.data('animated')){
+				return true;
+			}
+
+			el.data('animated',true);
+
+
+			if(options.text) {
+				str = options.text.split('');
+			}
+			else {
+				str = el.text().split('');
+			}
+
+			// The types array holds the type for each character;
+			// Letters holds the positions of non-space characters;
+
+			var types = [],
+				letters = [];
+
+			// Looping through all the chars of the string
+
+			for(var i=0;i<str.length;i++){
+
+				var ch = str[i];
+
+				if(ch == " "){
+					types[i] = "space";
+					continue;
+				}
+				else if(/[a-z]/.test(ch)){
+					types[i] = "lowerLetter";
+				}
+				else if(/[A-Z]/.test(ch)){
+					types[i] = "upperLetter";
+				}
+				else {
+					types[i] = "symbol";
+				}
+
+				letters.push(i);
+			}
+
+			el.html("");
+
+			// Self executing named function expression:
+
+			(function shuffle(start){
+
+				// This code is run options.fps times per second
+				// and updates the contents of the page element
+
+				var i,
+					len = letters.length,
+					strCopy = str.slice(0);	// Fresh copy of the string
+
+				if(start>len){
+
+					// The animation is complete. Updating the
+					// flag and triggering the callback;
+
+					el.data('animated',false);
+					options.callback(el);
+					return;
+				}
+
+				// All the work gets done here
+				for(i=Math.max(start,0); i < len; i++){
+
+					// The start argument and options.step limit
+					// the characters we will be working on at once
+
+					if( i < start+options.step){
+						// Generate a random character at thsi position
+						strCopy[letters[i]] = randomChar(types[letters[i]]);
+					}
+					else {
+						strCopy[letters[i]] = "";
+					}
+				}
+
+				el.text(strCopy.join(""));
+
+				setTimeout(function(){
+
+					shuffle(start+1);
+
+				},1000/options.fps);
+
+			})(-options.step);
+
+
+		});
+	};
+
+	function randomChar(type){
+		var pool = "";
+
+		if (type == "lowerLetter"){
+			pool = "abcdefghijklmnopqrstuvwxyz0123456789";
+		}
+		else if (type == "upperLetter"){
+			pool = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+		}
+		// else if (type == "symbol"){
+		// 	pool = ",.?/\\(^)![]{}*&^%$#'\"";
+		// }
+
+		var arr = pool.split('');
+		return arr[Math.floor(Math.random()*arr.length)];
+	}
+
+})(jQuery);
+
+//end of shuffle leeters plugin
+
+
+
+
 var main = function(){
 
 var classArray=new Array();
@@ -6,15 +177,21 @@ var backToEvents = 0;
 
 var topBarHeight=$('.top-bar').height();
 
-var winHeight= $(window).height();
+var winHeight= $(window).height(),
+    scrollDownPos= $(window).width()/2 - 25;
+
+$(".scroll-down").css("left",scrollDownPos);
 
 if ($(window).width()<550) {
-  $('.nav').hide();
-  $('.nav-button').show();
+  $('.nav-box').hide();
+  $('.menu-button').show();
   $('.nav li').css("display","list-item");
-  $('.nav-button').click(function(){
-    $('.nav').show();
+
+  $('.menu-button').click(function(){
+    $(".top-bar").addClass("top-bar-black");
+    $('.nav-box').toggle();
   });
+  $(".nav a").click(function(){$('.nav-box').toggle();});
   $('.event-container').hide();
   $('.row').removeClass('row');
   $('.add').addClass('row');
@@ -23,38 +200,12 @@ if ($(window).width()<550) {
   $('.info-close').hide();
   $('.event-container').removeAttr('name');
   $('.event-content').attr('name','Events');
-  // $('.leftarrow').click(function (){
-  //   index-=1;
-  //   if(index<0){
-  //     index=items.length - 1 ;}
-  //   cycle();
-  //   reset();
-  // }
-  // $('.rightarrow').click(function (){
-  //   index+=1;
-  //   index%=items.length;
-  //   cycle();
-  //   reset();
-  // }
+  // setInt
 }
 
 $(".home-slide").css("height",winHeight);
 $(".event-content").css("height",winHeight-topBarHeight);
-//para-shuffler code begins
-var $post_para = $(".post-para"),
-    $digm = $(".digm"),
-    $pre_para = $(".pre-para");
-// $pre_para.shuffleLetters();
-//  $digm.shuffleLetters();
 
-
- setTimeout(function(){$pre_para.shuffleLetters({ "text": "to" });$digm.shuffleLetters({ "text": "drop" });},1000);
- setTimeout(function(){$pre_para.shuffleLetters({ "text": "into the" });$digm.shuffleLetters({ "text": "dise" });},2000);
- setTimeout(function(){$pre_para.shuffleLetters({ "text": "of a new" });$digm.shuffleLetters({ "text": "digm" });},3000);
-
- setTimeout(function(){$pre_para.addClass("invisible");$post_para.fadeIn(600);},4000);
-
-//para-shuffler code ends
 
 
 // NOTE: smooth scroller cods starts
@@ -90,22 +241,31 @@ if($(".event-content").css("display") == "block") totalEventScrollHeight += even
 
 // console.log($(".event-content"));
 
+  if(winScroll >= 2){topBar.addClass("top-bar-black");$("a[href$='Home']").addClass("nav-active");}
+  else if(winScroll < 2){
+    topBar.removeClass("top-bar-black");$("a[href$='Home']").removeClass("nav-active");
+    if ($(window).width()<550) {
+      $(".nav-box").css("display","none");
+    }
+}
+
   if((homeHeight-topBarHeight) <= winScroll){
-      topBar.addClass("top-bar-black");
+      // topBar.addClass("top-bar-black");
       activeNav.removeClass("nav-active");
+      $("a[href$='Home']").removeClass("nav-active");
       $("a[href$='About']").addClass("nav-active");
   }
   else if ((homeHeight-topBarHeight) > winScroll){
-    topBar.removeClass("top-bar-black");
+    // topBar.removeClass("top-bar-black");
     $("a[href$='About']").removeClass("nav-active");
   }
 
-  if((homeHeight+aboutHeight+100 -topBarHeight) <= winScroll){  //+100 for compensating padding
+  if((homeHeight+aboutHeight+100 -topBarHeight ) <= winScroll){  //+100 for compensating padding
     activeNav.removeClass("nav-active");
     $("a[href$='About']").removeClass("nav-active");
     $("a[href$='Team']").addClass("nav-active");
   }
-  else if((homeHeight+aboutHeight+100 -topBarHeight) > winScroll){
+  else if((homeHeight+aboutHeight+100 -topBarHeight ) > winScroll){
     $("a[href$='Team']").removeClass("nav-active");
   }
 
@@ -119,7 +279,7 @@ if($(".event-content").css("display") == "block") totalEventScrollHeight += even
     $("a[href$='Events']").removeClass("nav-active");
   }
 
-  if(totalEventScrollHeight <= winScroll ){
+  if(totalEventScrollHeight  - 1 <= winScroll ){    //firefox bug 1px compensation
     activeNav.removeClass("nav-active");
     $("a[href$='About']").removeClass("nav-active");
     $("a[href$='Team']").removeClass("nav-active");
@@ -201,21 +361,7 @@ $('.leftarrow').click(function (){
     classArray[2]=items.length;
   }
   $(".event-"+classArray[2]).addClass('event-active').show();
-  // index-=1;
-  // if(index<0){
-  //   index=items.length - 1 ;}
-  // cycle();
   reset();
-  // var currSlide=$(".event-active");
-  // var prevSlide = currSlide.prev();
-  // // console.log(nextSlide);
-  // if(prevSlide.length == 0){
-  //   prevSlide = $(".event").last();
-  // }
-  // currSlide.fadeOut(400).removeClass("event-active");
-  // reset();
-  // prevSlide.fadeIn(400).addClass("event-active");
-
 });
 
 $('.rightarrow').click(function (){
@@ -226,49 +372,9 @@ $('.rightarrow').click(function (){
     classArray[2]=1;
   }
   $(".event-"+classArray[2]).addClass('event-active').show();
-  // index+=1;
-  // index%=items.length;
-  // cycle();
   reset();
-  // var currSlide=$(".event-active");
-  // var nextSlide = currSlide.next();
-  // // console.log(nextSlide);
-  // if(nextSlide.length == 0){
-  //   nextSlide = $(".event").first();
-  // }
-  // currSlide.fadeOut(400).removeClass("event-active");
-  // reset();
-  // nextSlide.fadeIn(400).addClass("event-active");
 });
 
-
-
-
-
-// $('.leftarrow').click(function (){
-//  var currSlide=$(".event-active");
-//  var prevSlide = currSlide.prev();
-//  // console.log(nextSlide);
-//  if(prevSlide.length == 0){
-//    prevSlide = $(".event").last();
-//  }
-//  currSlide.fadeOut(400).removeClass("event-active");
-//  reset();
-//  prevSlide.fadeIn(400).addClass("event-active");
-//
-// });
-//
-// $('.rightarrow').click(function (){
-//  var currSlide=$(".event-active");
-//  var nextSlide = currSlide.next();
-//  // console.log(nextSlide);
-//  if(nextSlide.length == 0){
-//    nextSlide = $(".event").first();
-//  }
-//  currSlide.fadeOut(400).removeClass("event-active");
-//  reset();
-//  nextSlide.fadeIn(400).addClass("event-active");
-// });
 
 $('.info-close').click(function (){
  $('html,body').animate({
@@ -280,6 +386,22 @@ $('.info-close').click(function (){
 // NOTE: event detials slider ends
 
 
-
 }
+
 $(document).ready(main);
+
+$(window).load(function(){
+  var $post_para = $(".post-para"),
+      $digm = $(".digm"),
+      $pre_para = $(".pre-para");
+
+      $pre_para.removeClass("invisible"); $digm.text("noid");
+   setTimeout(function(){$pre_para.shuffleLetters({ "text": "to" });$digm.shuffleLetters({ "text": "drop" });},1000);
+   setTimeout(function(){$pre_para.shuffleLetters({ "text": "into the" });$digm.shuffleLetters({ "text": "dise" });},2000);
+   setTimeout(function(){$pre_para.shuffleLetters({ "text": "of a new" });$digm.shuffleLetters({ "text": "digm" });},3000);
+
+   setTimeout(function(){$pre_para.addClass("invisible");$post_para.fadeIn(600); $digm.text("digm");},4000);
+
+});
+$(window).bind('resize',function(){location.reload();});
+// $(window).on("orientationchange" , function(e){alert('orientation changed');});

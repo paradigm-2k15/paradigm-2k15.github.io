@@ -1,11 +1,21 @@
 @font-face {
     font-family: 'Exo2.0-Black';
-    src: url('../fonts/exo_2.0/Exo2.0-Black.otf');
+    src: url('../fonts/exo_2.0/Exo2.0-Black.eot'), url('../fonts/exo_2.0/Exo2.0-Black.otf');
 }
 
 @font-face {
     font-family: 'Exo2.0-Light';
-    src: url('../fonts/exo_2.0/Exo2.0-Light.otf');
+    src: url('../fonts/exo_2.0/Exo2.0-Light.eot'), url('../fonts/exo_2.0/Exo2.0-Light.otf');
+}
+
+html{font-size: 1em;}
+.floating-logo{
+  position: absolute;
+  left: 10%;
+  width: 100px;
+  height: 100px;
+  background: #eee;
+  padding: 25px 0;
 }
 .hide{
   /*height: 100vh;*/
