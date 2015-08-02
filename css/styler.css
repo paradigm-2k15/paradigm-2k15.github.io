@@ -157,7 +157,10 @@ input:focus{
 }
 
 /* Larger than desktop */
-@media (min-width: 1000px) {}
+@media (min-width: 1000px) {
+  html{font-size: 0.95em;}
+  .h_register{width: 70%;}
+}
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
