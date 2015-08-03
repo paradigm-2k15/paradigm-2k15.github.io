@@ -251,6 +251,7 @@ body::-webkit-scrollbar-thumb {
   .team-container, .register-container{ width: 100%; height: auto; background: #333 url("../img/slide-bg.jpg") no-repeat center center fixed; background-size: cover;}
   .black-overlay{ width: 100%; height: 100%; background: url("../img/black-pattern.png");}
   .member-detail{  font-family: "Exo2.0-Bold",sans-serif; color: #a4a4a4; padding: 25px 0;}
+  .member-photo{height: 100px; width: 100px; margin: 0 auto;}
   .member-name a{text-decoration: none; color: #a4a4a4;}
   .member-name{font-size: 1.2em; color: #a4a4a4; text-transform: uppercase;}
   .member-post{color: #cd2929; text-transform: uppercase; font-size: 0.8em;}
