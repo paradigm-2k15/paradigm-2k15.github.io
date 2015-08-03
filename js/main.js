@@ -37,7 +37,7 @@
 
 		var options = $.extend({
 			"step"		: 8,			// How many times should the letters be changed
-			"fps"		: 25,			// Frames Per Second
+			"fps"		: 30,			// Frames Per Second
 			"text"		: "", 			// Use this text instead of the contents
 			"callback"	: function(){}	// Run once the animation is complete
 		},prop)
@@ -224,6 +224,11 @@ $(".event-content").css("height",winHeight-topBarHeight);
   });
 //  smooth scroller ends
 
+$(".scroll-down").click(function(){
+  $('html,body').animate({
+    scrollTop: $(".home-slide").height() - $(".top-bar").height()
+  }, 600);
+});
 
 // NOTE: top bar scroller starts
 var scroll_changes = function(){
@@ -395,6 +400,8 @@ $(window).load(function(){
       $digm = $(".digm"),
       $pre_para = $(".pre-para");
 
+      $("#loading-screen").slideUp(400);
+      $("html,body").css("overflow-y","auto");
       $pre_para.removeClass("invisible"); $digm.text("noid");
    setTimeout(function(){$pre_para.shuffleLetters({ "text": "to" });$digm.shuffleLetters({ "text": "drop" });},1000);
    setTimeout(function(){$pre_para.shuffleLetters({ "text": "into the" });$digm.shuffleLetters({ "text": "dise" });},2000);
@@ -403,5 +410,5 @@ $(window).load(function(){
    setTimeout(function(){$pre_para.addClass("invisible");$post_para.fadeIn(600); $digm.text("digm");},4000);
 
 });
-$(window).bind('resize',function(){location.reload();});
-// $(window).on("orientationchange" , function(e){alert('orientation changed');});
+
+  window.addEventListener("orientationchange",function(){location.reload();}, false);

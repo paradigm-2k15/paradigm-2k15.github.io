@@ -9,7 +9,6 @@
 
 
 
-
 @font-face {
   font-family: 'Exo2.0-Black';
   src: url('../fonts/exo_2.0/Exo2.0-Black.eot'), url('../fonts/exo_2.0/Exo2.0-Black.otf');
@@ -72,9 +71,6 @@ body::-webkit-scrollbar-thumb {
   left: 7%;
   width: 75px;
   height: 75px;
-  /*background-color: #000;*/
-  /*background-image: url("../img/nav-bg.png");*/
-  /*background-position: 0px 0px;*/
   background-repeat: no-repeat;
   overflow: hidden;
 }
@@ -171,6 +167,7 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   left: 45%;
   bottom: 10px;
+  cursor: pointer;
 }
 
 .para-slide{
@@ -258,6 +255,7 @@ body::-webkit-scrollbar-thumb {
   .team-container, .register-container{ width: 100%; height: auto; background: #333 url("../img/slide-bg.jpg") no-repeat center center fixed; background-size: cover;}
   .black-overlay{ width: 100%; height: 100%; background: url("../img/black-pattern.png");}
   .member-detail{  font-family: "Exo2.0-Black",sans-serif; color: #a4a4a4; padding: 25px 0;}
+  .member-name a{text-decoration: none; color: #a4a4a4;}
   .member-name{font-size: 1.2em; color: #a4a4a4; text-transform: uppercase;}
   .member-post{color: #cd2929; text-transform: uppercase; font-size: 0.8em;}
   .container{text-align: center; padding-bottom: 20px !important;}
