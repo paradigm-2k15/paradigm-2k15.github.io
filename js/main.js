@@ -216,7 +216,7 @@ $(".event-content").css("height",winHeight-topBarHeight);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
         $('html,body').animate({
-          scrollTop: target.offset().top - topBarHeight
+          scrollTop: target.offset().top - topBarHeight + 1 // + 1 for firefox bug
         }, 1000);
         return false;
       }
@@ -284,7 +284,7 @@ if($(".event-content").css("display") == "block") totalEventScrollHeight += even
     $("a[href$='Events']").removeClass("nav-active");
   }
 
-  if(totalEventScrollHeight  - 1 <= winScroll ){    //firefox bug 1px compensation
+  if(totalEventScrollHeight  <= winScroll ){    //firefox bug 1px compensation
     activeNav.removeClass("nav-active");
     $("a[href$='About']").removeClass("nav-active");
     $("a[href$='Team']").removeClass("nav-active");
@@ -400,8 +400,8 @@ $(window).load(function(){
       $digm = $(".digm"),
       $pre_para = $(".pre-para");
 
-      $("#loading-screen").slideUp(400);
-      $("html,body").css("overflow-y","auto");
+      $("#loading-screen").slideUp(600, function(){$("html,body").css("overflow-y","auto");});
+
       $pre_para.removeClass("invisible"); $digm.text("noid");
    setTimeout(function(){$pre_para.shuffleLetters({ "text": "to" });$digm.shuffleLetters({ "text": "drop" });},1000);
    setTimeout(function(){$pre_para.shuffleLetters({ "text": "into the" });$digm.shuffleLetters({ "text": "dise" });},2000);
