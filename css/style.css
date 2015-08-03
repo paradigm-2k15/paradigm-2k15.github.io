@@ -25,10 +25,6 @@
 }
 
 @font-face {
-  font-family: 'Exo2.0-Light';
-  src: url('../fonts/exo_2.0/Exo2.0-Light.eot'), url('../fonts/exo_2.0/Exo2.0-Light.otf');
-}
-@font-face {
   font-family: 'Exo2.0-Regular';
   src: url('../fonts/exo_2.0/Exo2.0-Regular.eot'), url('../fonts/exo_2.0/Exo2.0-Regular.otf');
 }
@@ -110,7 +106,7 @@ body::-webkit-scrollbar-thumb {
   position: relative;
 }
 .nav  a{
-  font-family: 'Exo2.0-Light',sans-serif;
+  font-family: 'Exo2.0-Thin',sans-serif;
   text-transform: uppercase;
   position: relative;
   top: 10px;
@@ -232,7 +228,7 @@ body::-webkit-scrollbar-thumb {
 
   .section-title {
     text-shadow: rgba(0,0,0,.01) 0 0 1px;
-    font-family: 'Exo2.0-Black',sans-serif;
+    font-family: 'Exo2.0-Bold',sans-serif;
     font-size: 2em;
     text-transform: uppercase;
     text-align: center;
@@ -254,7 +250,7 @@ body::-webkit-scrollbar-thumb {
 
   .team-container, .register-container{ width: 100%; height: auto; background: #333 url("../img/slide-bg.jpg") no-repeat center center fixed; background-size: cover;}
   .black-overlay{ width: 100%; height: 100%; background: url("../img/black-pattern.png");}
-  .member-detail{  font-family: "Exo2.0-Black",sans-serif; color: #a4a4a4; padding: 25px 0;}
+  .member-detail{  font-family: "Exo2.0-Bold",sans-serif; color: #a4a4a4; padding: 25px 0;}
   .member-name a{text-decoration: none; color: #a4a4a4;}
   .member-name{font-size: 1.2em; color: #a4a4a4; text-transform: uppercase;}
   .member-post{color: #cd2929; text-transform: uppercase; font-size: 0.8em;}
@@ -262,7 +258,7 @@ body::-webkit-scrollbar-thumb {
 
 
   .register-info{width: 80%; text-align: center; font-size: 1em; color: #a4a4a4; text-transform: uppercase; margin: 0 auto; padding: 30px 0;}
-  .reg-button{text-decoration: none; padding: 10px; background: #cd2929; color: #f5f5f5; font-size: 1.2em; font-family: "Exo2.0-Light",sans-serif;}
+  .reg-button{text-decoration: none; padding: 10px; background: #cd2929; color: #f5f5f5; font-size: 1.2em; font-family: "Exo2.0-Thin",sans-serif;}
   .reg-button:hover{background: #de3030;}
 /* NOTE: about section css ends */
 

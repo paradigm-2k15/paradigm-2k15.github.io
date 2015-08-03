@@ -35,7 +35,7 @@
             position:absolute;
              left:50%;
              top:50%;
-             margin-left:-250px;
+             margin-left:-200px;
              margin-top:-50px;
              box-sizing: border-box;
           }
@@ -64,6 +64,29 @@
               transform: rotate(360deg);
             }
           }
+          /* Media Queries
+          –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+
+          /* Larger than mobile */
+          @media only screen and (min-width: 320px) and (max-width:549px){
+              .loader-box{margin-left: -240px;}
+              .loading{position: relative; bottom: 80px;
+              left:40%;}
+          }
+
+          @media only screen and (min-width: 550px) and (max-width:749px){
+
+          }
+
+          @media only screen and (min-width: 750px) and (max-width:999px){
+
+          }
+
+          @media only screen and (min-width: 1000px) and (max-width:1200px){
+
+          }
         </style>
     </head>
     <body>
@@ -73,7 +96,7 @@
 
         <!-- Add your site or application content here -->
         <div id="loading-screen">
-          <div class="loader-box"><div class="loading"></div><div class="loader-message">Just Wait a Little longer....</div></div>
+          <div class="loader-box"><div class="loading"></div><div class="loader-message">Building The FrameWork . . .</div></div>
         </div>
 
         <script type="text/javascript">
