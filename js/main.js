@@ -403,12 +403,11 @@ $(window).load(function(){
       $("#loading-screen").slideUp(600, function(){$("html,body").css("overflow-y","auto");});
 
       $pre_para.removeClass("invisible"); $digm.text("noid");
-   setTimeout(function(){$pre_para.shuffleLetters({ "text": "to" });$digm.shuffleLetters({ "text": "drop" });},1000);
-   setTimeout(function(){$pre_para.shuffleLetters({ "text": "into the" });$digm.shuffleLetters({ "text": "dise" });},2000);
-   setTimeout(function(){$pre_para.shuffleLetters({ "text": "of a new" });$digm.shuffleLetters({ "text": "digm" });},3000);
+   setTimeout(function(){$pre_para.shuffleLetters({ "text": "to" });$digm.shuffleLetters({ "text": "drop" });$digm.text("digm");},1000);
+   setTimeout(function(){$pre_para.shuffleLetters({ "text": "into the" });$digm.shuffleLetters({ "text": "dise" });$digm.text("digm");},2000);
+   setTimeout(function(){$pre_para.shuffleLetters({ "text": "of a new" });$digm.shuffleLetters({ "text": "digm" });$digm.text("digm");},3000);
 
    setTimeout(function(){$pre_para.addClass("invisible");$post_para.fadeIn(600); $digm.text("digm");},4000);
-
 });
 
   window.addEventListener("orientationchange",function(){location.reload();}, false);

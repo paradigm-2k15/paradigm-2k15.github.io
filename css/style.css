@@ -305,6 +305,7 @@ body{
 .event-15 > .event-image{background:#fff url("../img/jacksparrow.png") no-repeat;}
 .event-16 > .event-image{background:#fff url("../img/zorro.png") no-repeat;}
 
+
 .event-image{
   width: 40%;
   float: left;
@@ -512,12 +513,16 @@ footer{background: #333;}
 .eventhover div{width: 100%; height: 100px; padding-top: 35%;}
 .event-hover-active{
   display: block;
-  background: url("../img/black-pattern.png");
+  background: rgba(0, 0, 0, 0.5) url("../img/black-pattern.png");
   /*height:200px;*/
   position:relative;
   bottom:200px;
 }
 
+.plus{
+  background: url("../img/more.png") no-repeat 50% 60% ;
+  background-size: 20% 23%;
+}
 
 
 /*
