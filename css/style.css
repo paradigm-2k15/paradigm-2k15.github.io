@@ -263,6 +263,8 @@ body{
   .register-info{width: 80%; text-align: center; font-size: 1em; color: #a4a4a4; text-transform: uppercase; margin: 0 auto; padding: 30px 0;}
   .reg-button{text-decoration: none; padding: 10px; background: #cd2929; color: #f5f5f5; font-size: 1.2em; font-family: "Exo2.0-Thin",sans-serif;}
   .reg-button:hover{background: #de3030;}
+
+  .contact-us{color:#fff; text-transform: uppercase; width: 95%; height:0px; position: relative; bottom: 138px;}
 /* NOTE: about section css ends */
 
  /* NOTE: event details css start */
@@ -287,8 +289,8 @@ body{
 
 
 .event-1 > .event-image{background:#fff url("../img/eddard.png") no-repeat;}
-.event-2 > .event-image{background:#fff url("../img/web.png") no-repeat;}
-.event-3 > .event-image{background:#fff url("../img/itachi.png") no-repeat;}
+.event-2 > .event-image{background:#fff url("../img/web.jpg") no-repeat;}
+.event-3 > .event-image{background:#fff url("../img/itachi.jpg") no-repeat;}
 .event-4 > .event-image{background:#fff url("../img/nine.png") no-repeat;}
 .event-5 > .event-image{background:#fff url("../img/3drago.png") no-repeat;}
 .event-6 > .event-image{background:#fff url("../img/zorro.png") no-repeat;}
@@ -668,6 +670,7 @@ footer{background: #333;}
   .head-name{font-size: 1.3em;} .ph{font-size: 0.7em;}
   .register-container{height:240px;}
   .foot{font-size: 10px;}
+  .contact-us{bottom: 110px; font-size: 1em;}
 }
 
 /* Larger than phablet (also point when grid becomes active) */
@@ -694,6 +697,7 @@ footer{background: #333;}
   .info{width:100%;}
   .head-name{font-size: 2em;}
   .register-container{height:240px;}
+  .contact-us{bottom: 100px;}
 }
 
 /* Larger than tablet */
@@ -716,6 +720,7 @@ html{font-size: 0.75em;}
 .event-image{background-size: contain !important;}
 .head-name{font-size: 2em;}
 .register-container{height:280px;}
+.contact-us{bottom: 110px;}
 }
 
 /* Larger than desktop */
