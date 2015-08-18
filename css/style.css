@@ -340,6 +340,9 @@ li ol li{
 .instruct p{
   text-align: center;
 }
+.align-right{
+  text-align: right;
+}
 
 .ins-close{
   position: relative;
